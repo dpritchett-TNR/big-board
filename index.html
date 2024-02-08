@@ -41,6 +41,46 @@
       padding: 8px;
       text-align: left;
     }
+
+    /* Clip titles after 160 characters */
+    td[data-title]::before {
+      content: attr(data-title);
+      display: block;
+      max-width: 160px; /* Adjust the max-width as needed for both mobile and desktop */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 5px; /* Add margin for better separation */
+    }
+
+    /* Clip URLs after 45 characters */
+    td[data-url]::before {
+      content: attr(data-url);
+      display: block;
+      max-width: 160px; /* Adjust the max-width as needed for both mobile and desktop */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 12px; /* Adjust the font size for URL */
+      color: #666; /* Adjust the color for less prominence */
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 16px; /* Adjust the font size for smaller screens */
+      }
+
+      /* Make the URL even less prominent on mobile */
+      td[data-url]::before {
+        font-size: 10px; /* Further reduce font size for URL on mobile */
+        color: #999; /* Adjust the color for even less prominence on mobile */
+      }
+
+      /* Extend the width of the title fields by 200% on mobile */
+      td[data-title]::before {
+        max-width: 320px; /* 160px * 200% = 320px */
+      }
+    }
   </style>
 </head>
 <body>

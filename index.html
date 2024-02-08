@@ -40,16 +40,16 @@
       border: 1px solid #ddd;
       padding: 8px;
       text-align: left;
-    }
-
-    /* Clip titles after 160 characters */
-    td[data-title]::before {
-      content: attr(data-title);
-      display: block;
-      max-width: 160px; /* Adjust the max-width as needed for both mobile and desktop */
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    /* Clip titles after 110 characters */
+    td[data-title]::before {
+      content: attr(data-title);
+      display: block;
+      max-width: 110px; /* Adjust the max-width as needed for both mobile and desktop */
       margin-bottom: 5px; /* Add margin for better separation */
     }
 
@@ -58,9 +58,6 @@
       content: attr(data-url);
       display: block;
       max-width: 160px; /* Adjust the max-width as needed for both mobile and desktop */
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
       font-size: 12px; /* Adjust the font size for URL */
       color: #666; /* Adjust the color for less prominence */
     }

@@ -53,27 +53,29 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Top 15 NewsAPI Political Stories
-    async function fetchNewsApiPoliticalStories() {
-      try {
-        const response = await fetch(newsApiUrl);
+    // Top NewsAPI Political Stories
+async function fetchNewsApiPoliticalStories() {
+  try {
+    const response = await fetch(newsApiUrl);
 
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-
-        const newsApiPoliticalStories = (await response.json()).articles
-          .slice(0, 15) // Limit to the top 15 items
-          .map(story => ({
-            title: story.title,
-            url: story.url
-          }));
-
-        populateTable('newsApiPoliticalTableBody', newsApiPoliticalStories);
-      } catch (error) {
-        console.error('Error fetching NewsAPI political stories:', error.message);
-      }
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} - ${response.statusText}`);
     }
+
+    const newsApiPoliticalStories = (await response.json()).articles
+      .slice(0, 15) // Limit to the top 15 items
+      .filter(story => !story.url.includes('espn') && !story.url.includes('youtube.com')&& !story.url.includes('horoscope')&& !story.url.includes('weather'))
+      .map(story => ({
+        title: story.title,
+        url: story.url
+      }));
+
+    populateTable('newsApiPoliticalTableBody', newsApiPoliticalStories);
+  } catch (error) {
+    console.error('Error fetching NewsAPI political stories:', error.message);
+  }
+}
+
 
     // Populate table with data
     function populateTable(tableBodyId, politicalStories) {

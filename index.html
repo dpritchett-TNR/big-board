@@ -18,12 +18,15 @@
       padding: 15px;
       margin: 0;
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 20px; /* Adjust the font size as needed */
     }
 
     img {
-      display: block;
-      margin: 0 auto;
-      max-width: 150px; /* Adjust the max-width as needed */
+      margin-left: 10px; /* Add margin to separate image from text */
+      max-width: 35px; /* Adjust the max-width as needed */
       height: auto;
     }
 
@@ -41,20 +44,26 @@
   </style>
 </head>
 <body>
-  <h1>Reddit's Rising Political Stories</h1>
-  <img src="https://styles.redditmedia.com/t5_6/styles/communityIcon_a8uzjit9bwr21.png?width=256&s=d28ea66f16da5a6c2ccae0d069cc4d42322d69a9" alt="Reddit Logo">
+  <h1>
+    Reddit's Rising Political Stories
+    <img src="https://styles.redditmedia.com/t5_6/styles/communityIcon_a8uzjit9bwr21.png?width=256&s=d28ea66f16da5a6c2ccae0d069cc4d42322d69a9" alt="Reddit Logo">
+  </h1>
   <table id="redditPoliticalTable">
     <tbody id="redditPoliticalTableBody"></tbody>
   </table>
 
-  <h1>The New York Times - Top 15 Political Stories</h1>
-  <img src="https://lh4.googleusercontent.com/rAu6Oi1vFIlx747JxosPs9qs3vd08vqU49L1eLWojiWrIIAj5xDEcdSwYS_AeGLwSGR6HmWnkeKk7DZJN3oReVQOop8b7q29kzkC3DEAS3XRtv828wTac8OPlPsdQwgOwd573PaF" alt="The New York Times Logo">
+  <h1>
+    Top NYT Political Stories
+    <img src="https://lh4.googleusercontent.com/rAu6Oi1vFIlx747JxosPs9qs3vd08vqU49L1eLWojiWrIIAj5xDEcdSwYS_AeGLwSGR6HmWnkeKk7DZJN3oReVQOop8b7q29kzkC3DEAS3XRtv828wTac8OPlPsdQwgOwd573PaF" alt="The New York Times Logo">
+  </h1>
   <table id="nytPoliticalTable">
     <tbody id="nytPoliticalTableBody"></tbody>
   </table>
 
-  <h1>NewsAPI - Top Political Stories</h1>
-  <img src="https://databar.ai/media/external_source_logo/NewsAPI_QjWnptB.png" alt="NewsAPI Logo">
+  <h1>
+    NewsAPI - Other Top Stories
+    <img src="https://databar.ai/media/external_source_logo/NewsAPI_QjWnptB.png" alt="NewsAPI Logo">
+  </h1>
   <table id="newsApiPoliticalTable">
     <tbody id="newsApiPoliticalTableBody"></tbody>
   </table>
